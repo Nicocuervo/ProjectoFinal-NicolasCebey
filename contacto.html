@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/carro.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <script src="js/objetos.js"></script>
+    <script defer src="js/productos.js"></script>
+    <script defer src="js/modalCarro.js"></script>
+    <script defer src="js/contacto.js"></script>
+    <title>Contacto</title>
+</head>
+<body>
+  <div class="menu">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="index.html"><i class="fas fa-laptop-code"></i></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="productos.html">Productos</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link">Contacto</a>
+          </li>
+
+        </ul>
+              <div class="carrito">$ <span id="total"></span> <a class="btn btn-outline-danger boton-carrito" onclick="modal(carro), resetear(), verTotalEnModal()" data-toggle="modal" data-target="#carrito-modal"><i class="fas fa-shopping-cart"></i></a></div>
+          </div>
+        </nav>
+      </div>
+  </div>
+  <div id="mod"></div>
+  <br>
+  <div class="container">
+  <section class="mb-4">
+
+    <div class="row">
+
+        <div class="col-md-9 mb-md-0 mb-5">
+            <form id="contact-form" name="contact-form" action="" method="POST">
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                          <label for="name" class="">Nombre</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Ingrese su nombre aquí." required>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                          <label for="email" class="">Email</label>
+                            <input type="text" id="email" name="email" class="form-control" placeholder="Ingrese su email aquí." required>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                          <label for="subject" class="">Asunto</label>
+                            <input type="text" id="subject" name="subject" class="form-control" placeholder="Ingrese asunto aquí." required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <div class="md-form">
+                          <label for="message">Mensaje</label>
+                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea" placeholder="Escriba su mensaje..." required></textarea>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+            <div class="text-center text-md-left">
+              <input id="input" type="submit" value="Enviar" onclick="validar();">
+            </div>
+            <div class="status"></div>
+        </div>
+
+        <div class="col-md-3 text-center">
+            <ul class="list-unstyled mb-0">
+                <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                    <p>Buenos Aires</p>
+                </li>
+
+                <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                    <p>11 3254 0353</p>
+                </li>
+
+                <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                    <p>cebey.nicolas@gmail.com</p>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</section>
+</div>
+
+    <footer class="page-footer font-small unique-color-dark">
+
+      <div style="background-color: #fd3030;">
+        <div class="container">
+
+          <div class="row py-4 d-flex align-items-center">
+
+
+            <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+              <h6 class="mb-0" style="color: #eceff1">¡Contáctame en mis redes!</h6>
+            </div>
+
+            <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+              <a class="li-ic" href="https://www.linkedin.com/">
+                <i class="fab fa-linkedin-in white-text mr-4"> </i>
+              </a>
+            
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="container text-center text-md-left mt-5 ">
+        <div class="row m-lg-auto">
+          <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+            <h6 class="text-uppercase font-weight-bold">Presupuestador de Computadoras</h6>
+            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p>Somos una empresa con mas de 20 años de experiencia en el comercio de equipamiento informatico para oficina, gamers y mineria de criptomonedas.</p>
+          </div>
+          <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+            <h6 class="text-uppercase font-weight-bold">Contacto</h6>
+            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p>
+               Buenos Aires |<i class="fas fa-home mr-3"></i></p>
+            <p>
+               cebey.nicolas@gmail.com |<i class="fas fa-envelope mr-3"></i></p>
+            <p>
+               11 3254 0353 |<i class="fas fa-phone mr-3"></i></p>
+            <p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
